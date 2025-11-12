@@ -32,15 +32,11 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
-    // spec project for authentication
-    { name: 'spec', testMatch: /.*\.spec\.ts/ },
-
     {
       name: 'chromium',
       use: {
         ...devices['Desktop Chrome'],
       },
-      dependencies: ['spec'],
       testMatch: '**/*.spec.ts',
     },
 
