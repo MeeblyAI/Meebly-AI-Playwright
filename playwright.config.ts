@@ -39,27 +39,6 @@ export default defineConfig({
       name: 'chromium',
       use: {
         ...devices['Desktop Chrome'],
-        storageState: 'playwright/.auth/user.json',
-      },
-      dependencies: ['spec'],
-      testMatch: '**/*.spec.ts',
-    },
-
-    {
-      name: 'firefox',
-      use: {
-        ...devices['Desktop Firefox'],
-        storageState: 'playwright/.auth/user.json',
-      },
-      dependencies: ['spec'],
-      testMatch: '**/*.spec.ts',
-    },
-
-    {
-      name: 'webkit',
-      use: {
-        ...devices['Desktop Safari'],
-        storageState: 'playwright/.auth/user.json',
       },
       dependencies: ['spec'],
       testMatch: '**/*.spec.ts',
