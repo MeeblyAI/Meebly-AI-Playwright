@@ -1,13 +1,13 @@
 export const AUTH_CONSTANTS = {
   URL: 'https://super-secret-edk-testing-ai-project.meebly.ai',
-  EMAIL: 'aletheiasai@gmail.com',
-  PASSWORD: 'Playwright1234@',
+  EMAIL: 'founders@meebly.ai',
+  PASSWORD: 'MeeblyFounders',
 };
 
 export const TEST_DATA = {
   ORG_NAME_PREFIX: 'Playwright',
-  APP_NAME_PREFIX: 'Meebly',
-  APP_ENVIRONMENT: 'Dev',
+  APP_NAME_PREFIX: 'Meebly-Playwright',
+  APP_ENVIRONMENT: 'Playwright',
   APP_URL: 'https://super-secret-edk-testing-ai-project.meebly.ai',
   ACTION_NAME_PREFIX: 'testAction',
 };
