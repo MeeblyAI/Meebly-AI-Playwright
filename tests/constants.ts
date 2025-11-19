@@ -7,7 +7,7 @@ export const AUTH_CONSTANTS = {
 export const TEST_DATA = {
   ORG_NAME_PREFIX: 'Playwright',
   APP_NAME_PREFIX: 'Meebly-Playwright',
-  APP_ENVIRONMENT: 'Playwright',
+  APP_ENVIRONMENT: 'Env-Playwright',
   APP_URL: 'https://super-secret-edk-testing-ai-project.meebly.ai',
   ACTION_NAME_PREFIX: 'testAction',
 };
