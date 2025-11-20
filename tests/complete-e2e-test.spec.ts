@@ -125,9 +125,7 @@ test('Complete E2E workflow - Create org, app, action and test AI', async ({
   await page.getByRole('button', { name: 'Send' }).click();
 
   // Wait for AI response and verify it's valid (not "No response received")
-  const responseElement = page.locator(
-    '.max-w-\\[80\\%\\].rounded-lg.px-4.py-3.bg-gray-100 > .break-words'
-  );
+  const responseElement = page.locator('.max-w-\\[85\\%\\].text-gray-900');
   await responseElement.waitFor({
     state: 'visible',
     timeout: TIMEOUTS.AI_RESPONSE,
