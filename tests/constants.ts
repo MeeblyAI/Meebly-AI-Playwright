@@ -13,7 +13,7 @@ export const TEST_DATA = {
 };
 
 export const TIMEOUTS = {
-  AI_RESPONSE: 30000, // 30 seconds for AI to respond
+  AI_RESPONSE: 60000, // 60 seconds for AI to respond
   DEFAULT: 5000,
 };
 

@@ -95,7 +95,12 @@ test('Complete E2E workflow - Create org, app, action and test AI', async ({
   const descriptionField = page.getByRole('textbox', {
     name: 'Describe what this action',
   });
-  await expect(descriptionField).not.toBeEmpty();
+
+  // Wait for the field to not be empty (i.e., have content)
+  await expect(async () => {
+    const value = await descriptionField.inputValue();
+    expect(value.trim()).not.toBe('');
+  }).toPass({ timeout: TIMEOUTS.AI_RESPONSE });
 
   // Get the generated content
   const generatedContent = await descriptionField.inputValue();
