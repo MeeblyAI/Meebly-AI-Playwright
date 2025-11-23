@@ -46,7 +46,7 @@ test.describe('Agent Tests', () => {
     const instructionsTextbox = page.getByRole('textbox', {
       name: 'Instructions',
     });
-    const newInstructions = getTimestampedName(TEST_ENV_VARS.AGENT_DESCRIPTION);
+    const newInstructions = getTimestampedName(TEST_DATA.AGENT_DESCRIPTION);
     await instructionsTextbox.fill(newInstructions);
     await page.getByRole('button', { name: 'Next' }).click();
     await page.getByRole('button', { name: 'Update Agent' }).click();

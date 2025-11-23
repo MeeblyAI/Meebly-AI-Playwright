@@ -52,7 +52,7 @@ test.describe('Action Tests', () => {
     const descriptionTextbox = page.getByRole('textbox', {
       name: 'Describe what this action',
     });
-    const newDescription = getTimestampedName(TEST_ENV_VARS.ACTION_DESCRIPTION);
+    const newDescription = getTimestampedName(TEST_DATA.ACTION_DESCRIPTION);
     await descriptionTextbox.fill(newDescription);
     await page.getByRole('button', { name: 'Payload' }).click();
     await page.getByRole('button', { name: 'Update', exact: true }).click();

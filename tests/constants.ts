@@ -11,6 +11,8 @@ export const TEST_DATA = {
   APP_URL: 'https://super-secret-edk-testing-ai-project.meebly.ai',
   ACTION_NAME_PREFIX: 'testAction',
   ACTION_URL_PREFIX: '/api/test-endpoint',
+  ACTION_DESCRIPTION: 'Get user data from the system. ',
+  AGENT_DESCRIPTION: 'You are a helpful assistant.',
 };
 
 export const TEST_ENV_VARS = {
@@ -19,8 +21,6 @@ export const TEST_ENV_VARS = {
   ENVIRONMENT_NAME: 'Playwright Test',
   ACTION_NAME: 'getUsersData',
   AGENT_NAME: 'Meebly Playwright Test Agent',
-  ACTION_DESCRIPTION: 'Get user data from the system. ',
-  AGENT_DESCRIPTION: 'You are a helpful assistant.',
 };
 
 export const TIMEOUTS = {
