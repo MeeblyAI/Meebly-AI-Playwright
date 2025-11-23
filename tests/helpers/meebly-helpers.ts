@@ -4,6 +4,7 @@ import {
   getTimestampedName,
   TIMEOUTS,
   AUTH_CONSTANTS,
+  TEST_ENV_VARS,
 } from '../constants';
 
 export class MeeblyHelpers {
@@ -40,6 +41,27 @@ export class MeeblyHelpers {
     await this.page.getByRole('button', { name: 'Create' }).click();
 
     return orgName;
+  }
+
+  /**
+   * Switches to a specified organization
+   * @param orgName - Name of the organization to switch to
+   */
+  async switchOrganization(orgName: string): Promise<void> {
+    await this.page.waitForTimeout(1000);
+    await this.page
+      .getByRole('button', { name: 'Switch Organization' })
+      .click();
+    await this.page
+      .getByRole('textbox', { name: 'Search my organizations...' })
+      .waitFor({ state: 'visible', timeout: 3000 });
+    await this.page
+      .getByRole('textbox', { name: 'Search my organizations...' })
+      .fill(orgName);
+    // await this.page
+    //   .getByText(orgName)
+    //   .waitFor({ state: 'visible', timeout: 3000 });
+    await this.page.getByText(orgName).click();
   }
 
   /**
@@ -96,6 +118,13 @@ export class MeeblyHelpers {
     await this.page.getByRole('button', { name: environment }).click();
   }
 
+  /** Selects a specific app
+   * @param appName - Name of the app to select
+   */
+  async selectApp(appName: string): Promise<void> {
+    await this.page.getByText(`${appName}App ID`).click();
+  }
+
   /**
    * Creates a new action with AI-generated description
    * @param actionNamePrefix - Prefix for the action name (optional)
@@ -133,6 +162,13 @@ export class MeeblyHelpers {
       .click();
 
     return { actionName };
+  }
+
+  async navigateToAction(actionName: string): Promise<void> {
+    await this.page
+      .getByRole('textbox', { name: 'Search actions...' })
+      .fill(actionName);
+    await this.page.getByRole('heading', { name: actionName }).click();
   }
 
   /**
@@ -289,5 +325,14 @@ export class MeeblyHelpers {
       aiResponseValid,
       aiResponseText,
     };
+  }
+
+  /**
+   * Enter test environment app
+   */
+  async enterTestApp(): Promise<void> {
+    await this.authenticate();
+    await this.switchOrganization(TEST_ENV_VARS.ORG_NAME);
+    await this.selectApp(TEST_ENV_VARS.APP_NAME);
   }
 }
