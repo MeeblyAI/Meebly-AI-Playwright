@@ -20,6 +20,7 @@ export const TEST_ENV_VARS = {
   ACTION_NAME: 'getUsersData',
   AGENT_NAME: 'Meebly Playwright Test Agent',
   ACTION_DESCRIPTION: 'Get user data from the system. ',
+  AGENT_DESCRIPTION: 'You are a helpful assistant.',
 };
 
 export const TIMEOUTS = {

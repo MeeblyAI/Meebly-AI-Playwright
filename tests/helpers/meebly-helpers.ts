@@ -171,6 +171,13 @@ export class MeeblyHelpers {
     await this.page.getByRole('heading', { name: actionName }).click();
   }
 
+  async navigateToAgent(agentName: string): Promise<void> {
+    await this.page
+      .getByRole('textbox', { name: 'Search agents...' })
+      .fill(agentName);
+    await this.page.getByRole('heading', { name: agentName }).click();
+  }
+
   /**
    * Verifies that AI generated a description (checks if textbox has content)
    * @param textboxName - Name/label of the textbox to check
